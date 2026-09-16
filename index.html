@@ -1,0 +1,1179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bhargavi Shinde — Data Science, ML & Fintech</title>
+<meta name="description" content="Bhargavi Shinde, final-year AI & Data Science student (University of Mumbai, 2027). Data and ML work on customer risk scoring, transaction analytics, and LLM safety evaluation. Open to internships and graduate roles in fintech, data science, and risk.">
+<meta name="author" content="Bhargavi Shinde">
+<!-- [PLACEHOLDER] Replace https://your-domain.example/ with your live site URL (3 places below + JSON-LD) -->
+<link rel="canonical" href="https://your-domain.example/">
+<meta name="theme-color" content="#F5F1E8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1622" media="(prefers-color-scheme: dark)">
+
+<!-- Open Graph -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Bhargavi Shinde — Data Science, ML & Fintech">
+<meta property="og:description" content="Data and ML tools for the decisions financial institutions make about customers, risk, and trust.">
+<meta property="og:url" content="https://your-domain.example/">
+<!-- [PLACEHOLDER] Optional: add a 1200x630 preview image and uncomment -->
+<!-- <meta property="og:image" content="https://your-domain.example/og.png"> -->
+<meta property="profile:first_name" content="Bhargavi">
+<meta property="profile:last_name" content="Shinde">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bhargavi Shinde — Data Science, ML & Fintech">
+<meta name="twitter:description" content="Data and ML tools for the decisions financial institutions make about customers, risk, and trust.">
+
+<!-- JSON-LD Person schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Bhargavi Shinde",
+  "url": "https://your-domain.example/",
+  "email": "mailto:ergo.bhargavi@gmail.com",
+  "jobTitle": "AI & Data Science Student",
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Datta Meghe College of Engineering, University of Mumbai"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/ergocoder",
+    "https://github.com/ergocoder"
+  ],
+  "knowsAbout": ["Machine learning", "Data science", "Exploratory data analysis", "Classification", "Customer churn prediction", "LLM safety evaluation", "Python", "SQL"]
+}
+</script>
+
+<!-- Fonts: the only external dependency. System fallbacks are defined in CSS. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap">
+
+<!-- Apply a saved theme before paint to avoid a flash -->
+<script>
+  try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+
+<style>
+/* =========================================================
+   1. Tokens (light default, dark via media query or toggle)
+   ========================================================= */
+:root {
+  --paper: #F5F1E8;
+  --surface: #EDE7DB;
+  --ink: #16233A;
+  --text: #1F2A3C;
+  --muted: #59626F;
+  --rule: #D3CAB8;
+  --rule-strong: #16233A;
+  --accent: #2E6A4F;
+  --accent-soft: #DDE7DA;
+  --bar-muted: #A39C8E;
+  --placeholder-bg: #F3E3B5;
+  --placeholder-text: #5A4508;
+
+  --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  --max: 1100px;
+  --gutter: clamp(20px, 5vw, 48px);
+  --dur: 200ms;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0E1622; --surface: #152235; --ink: #EDE8DD; --text: #D9D4C9;
+    --muted: #9CA6B4; --rule: #2A384B; --rule-strong: #C9C2B4;
+    --accent: #86BFA0; --accent-soft: #1B3129; --bar-muted: #56647A;
+    --placeholder-bg: #4A3B0E; --placeholder-text: #F6E4B0;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0E1622; --surface: #152235; --ink: #EDE8DD; --text: #D9D4C9;
+  --muted: #9CA6B4; --rule: #2A384B; --rule-strong: #C9C2B4;
+  --accent: #86BFA0; --accent-soft: #1B3129; --bar-muted: #56647A;
+  --placeholder-bg: #4A3B0E; --placeholder-text: #F6E4B0;
+  color-scheme: dark;
+}
+
+/* =========================================================
+   2. Base
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 76px; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { max-width: 100%; }
+h1, h2, h3 { font-family: var(--serif); color: var(--ink); font-weight: 500; margin: 0; line-height: 1.15; }
+p { margin: 0 0 1em; }
+a { color: var(--ink); text-decoration-color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+ul, ol { margin: 0; padding: 0; }
+button { font: inherit; color: inherit; }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+section:focus, main:focus { outline: none; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+.num { font-variant-numeric: tabular-nums lining-nums; }
+.sr-only {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.skip {
+  position: absolute; left: 12px; top: -60px; z-index: 100;
+  background: var(--ink); color: var(--paper); padding: 8px 14px; text-decoration: none;
+}
+.skip:focus { top: 12px; }
+
+/* Visible placeholders for missing facts */
+.placeholder {
+  background: var(--placeholder-bg); color: var(--placeholder-text);
+  border: 1px dashed currentColor; padding: 0 4px; border-radius: 2px;
+  font-size: .9em; white-space: normal;
+}
+
+/* Small-caps labels (sentence case source text, rendered as small caps) */
+.label {
+  font-family: var(--sans);
+  font-variant-caps: all-small-caps;
+  letter-spacing: .06em;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+/* =========================================================
+   3. Header / nav
+   ========================================================= */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+.nav { display: flex; align-items: center; gap: 16px; height: 60px; }
+.brand {
+  font-family: var(--serif); font-size: 1.15rem; font-weight: 500;
+  color: var(--ink); text-decoration: none; white-space: nowrap;
+}
+.nav-links {
+  display: flex; gap: 4px; margin-left: auto; list-style: none;
+  overflow-x: auto; scrollbar-width: none; min-width: 0;
+}
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-links a {
+  display: block; padding: 6px 10px; font-size: .9375rem; color: var(--muted);
+  text-decoration: none; white-space: nowrap;
+}
+.nav-links a:hover { color: var(--ink); }
+.theme-btn {
+  flex: none; width: 36px; height: 36px; display: grid; place-items: center;
+  background: transparent; border: 1px solid var(--rule); border-radius: 50%;
+  cursor: pointer; color: var(--ink);
+}
+.theme-btn:hover { border-color: var(--ink); }
+.theme-btn svg { width: 16px; height: 16px; }
+.icon-sun { display: none; }
+:root[data-effective-theme="dark"] .icon-sun { display: block; }
+:root[data-effective-theme="dark"] .icon-moon { display: none; }
+@media (max-width: 520px) {
+  .brand-long { display: none; }
+  .nav-links a { padding: 6px 7px; font-size: .875rem; }
+}
+@media (min-width: 521px) { .brand-short { display: none; } }
+
+/* =========================================================
+   4. Hero
+   ========================================================= */
+.hero { padding: clamp(40px, 8vw, 88px) 0 0; }
+.hero-meta { color: var(--muted); font-size: .9375rem; margin-bottom: 20px; max-width: 60ch; }
+.hero h1 {
+  font-size: clamp(2.6rem, 7vw, 4.75rem);
+  font-weight: 400;
+  letter-spacing: -.015em;
+  line-height: 1;
+}
+.hero-thesis {
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 2.6vw, 1.85rem);
+  line-height: 1.3;
+  color: var(--ink);
+  max-width: 30ch;
+  margin: 22px 0 0;
+  font-weight: 400;
+}
+.hero-grid {
+  display: grid; gap: 32px 56px;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  align-items: end;
+}
+.hero-side { padding-bottom: 6px; }
+.hero-sub { color: var(--text); max-width: 46ch; min-height: 4.8em; margin-bottom: 20px; }
+.hero-sub.swap { animation: fade var(--dur) var(--ease); }
+.cta-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px; padding: 10px 18px; border-radius: 3px;
+  font-size: .9375rem; font-weight: 500; text-decoration: none; cursor: pointer;
+  border: 1px solid var(--ink); transition: background var(--dur), color var(--dur);
+}
+.btn-primary { background: var(--ink); color: var(--paper); }
+.btn-primary:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+.btn-secondary { background: transparent; color: var(--ink); }
+.btn-secondary:hover { background: var(--surface); }
+
+/* Lens control */
+.lens {
+  margin-top: 40px; padding: 16px 0; border-top: 1px solid var(--rule);
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
+}
+.lens-title { margin: 0; }
+.seg {
+  display: inline-flex; flex-wrap: wrap; border: 1px solid var(--rule-strong);
+  border-radius: 3px; overflow: hidden;
+}
+.seg button {
+  background: transparent; border: 0; cursor: pointer;
+  padding: 9px 14px; min-height: 42px; font-size: .9375rem; color: var(--text);
+  border-right: 1px solid var(--rule);
+  transition: background var(--dur), color var(--dur);
+}
+.seg button:last-child { border-right: 0; }
+.seg button:hover { background: var(--surface); }
+.seg button[aria-checked="true"] { background: var(--ink); color: var(--paper); }
+.seg button:focus-visible { outline-offset: -4px; outline-color: var(--accent); }
+.link-btn {
+  background: none; border: 0; padding: 6px 0; cursor: pointer;
+  color: var(--muted); font-size: .875rem; text-decoration: underline;
+  text-decoration-color: var(--rule); text-underline-offset: 3px;
+}
+.link-btn:hover { color: var(--ink); text-decoration-color: var(--accent); }
+.status-inline { font-size: .875rem; color: var(--accent); min-width: 8ch; }
+@media (max-width: 600px) {
+  .seg { display: grid; grid-template-columns: 1fr; width: 100%; }
+  .seg button { border-right: 0; border-bottom: 1px solid var(--rule); text-align: left; }
+  .seg button:last-child { border-bottom: 0; }
+}
+
+/* Key figures: styled as a report table */
+.figures {
+  margin: 0; border-top: 2px solid var(--rule-strong); border-bottom: 1px solid var(--rule);
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.figure { padding: 18px 18px 16px 0; }
+.figure + .figure { padding-left: 18px; border-left: 1px solid var(--rule); }
+.figure dd { margin: 0; }
+.figure-value {
+  font-family: var(--sans); font-weight: 500; color: var(--accent);
+  font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.1;
+  font-variant-numeric: tabular-nums lining-nums; letter-spacing: -.01em;
+}
+.figure dt { font-size: .875rem; color: var(--text); margin-top: 6px; line-height: 1.35; order: 2; }
+.figure { display: flex; flex-direction: column; }
+.figure dd { order: 1; }
+.figures-note { font-size: .8125rem; color: var(--muted); margin: 8px 0 0; }
+@media (max-width: 860px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-sub { min-height: 0; }
+  .figures { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .figure:nth-child(3) { padding-left: 0; border-left: 0; }
+  .figure:nth-child(n+3) { border-top: 1px solid var(--rule); }
+}
+
+/* =========================================================
+   5. Sections (report layout: label column + content column)
+   ========================================================= */
+.section { padding: clamp(56px, 8vw, 96px) 0 0; }
+.section-grid {
+  display: grid; grid-template-columns: minmax(0, 250px) minmax(0, 1fr); gap: 24px 56px;
+  border-top: 1px solid var(--rule-strong); padding-top: 18px;
+}
+.section-head h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-top: 2px; }
+.section-head .aside { color: var(--muted); font-size: .9375rem; margin-top: 12px; }
+@media (max-width: 860px) { .section-grid { grid-template-columns: 1fr; } }
+
+/* About */
+.about-text { font-family: var(--serif); font-size: clamp(1.15rem, 1.8vw, 1.3rem); line-height: 1.55; color: var(--ink); max-width: 60ch; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0; margin: 28px 0 0; border-top: 1px solid var(--rule); }
+.facts div { padding: 12px 16px 12px 0; border-bottom: 1px solid var(--rule); }
+.facts dt { font-size: .8125rem; color: var(--muted); }
+.facts dd { margin: 2px 0 0; font-size: .9375rem; }
+
+/* =========================================================
+   6. Projects
+   ========================================================= */
+.lens-note { font-size: .9375rem; color: var(--muted); margin-top: 12px; }
+.lens-note strong { color: var(--ink); font-weight: 500; }
+.projects { list-style: none; }
+.projects.swap { animation: fade var(--dur) var(--ease); }
+.project { border-bottom: 1px solid var(--rule); padding: 26px 0 24px; }
+.project:first-child { padding-top: 4px; }
+.project-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 20px; align-items: baseline; }
+.project-context { font-size: .875rem; color: var(--muted); }
+.badge {
+  display: inline-block; font-size: .8125rem; padding: 1px 8px; border-radius: 2px;
+  border: 1px solid var(--accent); color: var(--accent); white-space: nowrap;
+}
+.project h3 { font-size: clamp(1.35rem, 2.4vw, 1.7rem); margin: 6px 0 10px; max-width: 34ch; }
+.project-summary { max-width: 64ch; }
+.why {
+  border-left: 2px solid var(--accent); padding: 2px 0 2px 14px; margin: 14px 0 16px;
+  max-width: 64ch; font-size: .9875rem;
+}
+.why .label { display: block; font-size: .9375rem; color: var(--accent); line-height: 1.2; margin-bottom: 2px; }
+.why p { margin: 0; }
+.project-body { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px 32px; align-items: end; }
+.keyfigs { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.keyfigs li { font-size: .875rem; color: var(--muted); }
+.keyfigs b { font-weight: 500; color: var(--ink); font-variant-numeric: tabular-nums lining-nums; margin-right: 4px; }
+.project-actions { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; margin-top: 16px; }
+.toggle {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 40px;
+  background: transparent; border: 1px solid var(--rule-strong); border-radius: 3px;
+  padding: 7px 14px; cursor: pointer; font-size: .9375rem; color: var(--ink);
+}
+.toggle:hover { background: var(--surface); }
+.toggle svg { width: 12px; height: 12px; transition: transform var(--dur) var(--ease); }
+.toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+.ext { font-size: .9375rem; }
+
+/* Churn recall chart */
+.chart { margin: 0; width: 100%; max-width: 340px; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart figcaption { font-size: .8125rem; color: var(--muted); margin-top: 4px; }
+.chart .bar-before { fill: var(--bar-muted); }
+.chart .bar-after { fill: var(--accent); }
+.chart .track { fill: var(--surface); }
+.chart text { fill: var(--text); font-family: var(--sans); font-size: 12px; }
+.chart .val { font-weight: 600; font-variant-numeric: tabular-nums; }
+.chart .axis { stroke: var(--rule); stroke-width: 1; }
+.chart .tick { fill: var(--muted); font-size: 10px; }
+@media (max-width: 700px) { .project-body { grid-template-columns: 1fr; } .project-top { grid-template-columns: 1fr; } }
+
+/* Expandable case study */
+.case {
+  display: grid; grid-template-rows: 0fr; visibility: hidden;
+  transition: grid-template-rows var(--dur) var(--ease), visibility 0s linear var(--dur);
+}
+.case.open { grid-template-rows: 1fr; visibility: visible; transition: grid-template-rows var(--dur) var(--ease), visibility 0s; }
+.case-inner { overflow: hidden; min-height: 0; }
+.case-body {
+  margin-top: 20px; background: var(--surface); padding: clamp(18px, 3vw, 28px);
+  display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 0 28px;
+  border-top: 2px solid var(--rule-strong);
+}
+.case-row { display: contents; }
+.case-row > h4 {
+  margin: 0; padding: 14px 0; font-weight: 500;
+  font-variant-caps: all-small-caps; letter-spacing: .06em; font-size: 1rem; color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+}
+.case-row > div { padding: 14px 0; border-bottom: 1px solid var(--rule); min-width: 0; }
+.case-row:last-child > h4, .case-row:last-child > div { border-bottom: 0; }
+.case-row p:last-child { margin-bottom: 0; }
+.case ul { padding-left: 1.1em; }
+.case li { margin: 0 0 6px; max-width: 70ch; }
+.case li:last-child { margin-bottom: 0; }
+.future-tag { display: inline-block; font-size: .8125rem; color: var(--muted); border: 1px dashed var(--muted); padding: 0 6px; border-radius: 2px; margin-bottom: 8px; }
+.stack { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; padding: 0 !important; }
+.stack li { margin: 0; font-size: .875rem; border: 1px solid var(--rule); background: var(--paper); padding: 2px 8px; border-radius: 2px; }
+.links-row { display: flex; flex-wrap: wrap; gap: 6px 20px; }
+.table-scroll { overflow-x: auto; margin: 10px 0 12px; }
+.mtable { border-collapse: collapse; font-size: .9375rem; min-width: 300px; }
+.mtable caption { text-align: left; font-size: .8125rem; color: var(--muted); padding-bottom: 6px; }
+.mtable th, .mtable td { padding: 6px 18px 6px 0; text-align: right; border-bottom: 1px solid var(--rule); font-variant-numeric: tabular-nums lining-nums; }
+.mtable th:first-child, .mtable td:first-child { text-align: left; }
+.mtable thead th { font-weight: 500; color: var(--muted); border-bottom: 1px solid var(--rule-strong); }
+.mtable td.up { color: var(--accent); font-weight: 600; }
+@media (max-width: 640px) {
+  .case-body { grid-template-columns: 1fr; }
+  .case-row > h4 { border-bottom: 0; padding-bottom: 0; }
+}
+
+/* =========================================================
+   7. Experience, leadership, skills, certifications
+   ========================================================= */
+.timeline { list-style: none; }
+.tl-item { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 6px 28px; }
+.tl-date { font-size: .9375rem; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 3px; }
+.tl-item h3 { font-size: 1.35rem; }
+.tl-org { color: var(--muted); margin: 4px 0 10px; font-size: .9375rem; }
+.tl-item ul { padding-left: 1.1em; }
+.tl-item li { margin-bottom: 6px; max-width: 64ch; }
+@media (max-width: 640px) { .tl-item { grid-template-columns: 1fr; } }
+
+.lead-grid { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--rule); }
+.lead-grid li { padding: 16px 20px 16px 0; }
+.lead-grid li + li { padding-left: 20px; border-left: 1px solid var(--rule); }
+.lead-grid h3 { font-size: 1.15rem; margin-bottom: 4px; }
+.lead-grid .meta { font-size: .875rem; color: var(--muted); margin-bottom: 8px; }
+.lead-grid p { font-size: .9375rem; margin: 0; }
+@media (max-width: 860px) {
+  .lead-grid { grid-template-columns: 1fr; }
+  .lead-grid li + li { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule); }
+}
+
+.skill-groups { display: grid; gap: 18px; }
+.skill-group { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 6px 20px; align-items: start; }
+.skill-group h3 { font-family: var(--sans); font-size: .9375rem; font-weight: 500; color: var(--muted); padding-top: 5px; }
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  font-size: .9375rem; padding: 4px 11px; border: 1px solid var(--rule); border-radius: 2px;
+  background: transparent; transition: background var(--dur), border-color var(--dur);
+}
+/* Finance-relevant skills are marked only in the fintech and finance lenses */
+:root[data-lens="risk"] .chip[data-fin], :root[data-lens="finance"] .chip[data-fin] {
+  background: var(--accent-soft); border-color: var(--accent); color: var(--ink);
+}
+:root[data-lens="risk"] .chip[data-fin]::before, :root[data-lens="finance"] .chip[data-fin]::before {
+  content: ""; display: inline-block; width: 6px; height: 6px; background: var(--accent);
+  border-radius: 50%; margin-right: 7px; vertical-align: middle; transform: translateY(-1px);
+}
+.skills-legend { display: none; font-size: .875rem; color: var(--muted); margin-top: 18px; }
+:root[data-lens="risk"] .skills-legend, :root[data-lens="finance"] .skills-legend { display: block; }
+.skills-legend .dot { display: inline-block; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+@media (max-width: 560px) { .skill-group { grid-template-columns: 1fr; } .skill-group h3 { padding-top: 0; } }
+
+.certs { list-style: none; border-top: 1px solid var(--rule); }
+.certs li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 18ch); gap: 4px 24px; padding: 12px 0; border-bottom: 1px solid var(--rule); }
+.certs .issuer { color: var(--muted); font-size: .9375rem; text-align: right; }
+@media (max-width: 560px) { .certs li { grid-template-columns: 1fr; } .certs .issuer { text-align: left; } }
+
+/* =========================================================
+   8. Contact + footer
+   ========================================================= */
+.contact-lead { font-family: var(--serif); font-size: clamp(1.25rem, 2.2vw, 1.55rem); color: var(--ink); line-height: 1.35; max-width: 36ch; }
+.contact-list { list-style: none; margin-top: 24px; border-top: 1px solid var(--rule); }
+.contact-list li { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 4px 20px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--rule); }
+.contact-list .k { color: var(--muted); font-size: .9375rem; }
+.contact-list .v { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; min-width: 0; overflow-wrap: anywhere; }
+.copy-btn {
+  background: transparent; border: 1px solid var(--rule-strong); border-radius: 3px;
+  padding: 4px 10px; min-height: 34px; font-size: .875rem; cursor: pointer; color: var(--ink);
+}
+.copy-btn:hover { background: var(--surface); }
+@media (max-width: 480px) { .contact-list li { grid-template-columns: 1fr; } }
+
+.site-footer { margin-top: clamp(64px, 9vw, 110px); border-top: 1px solid var(--rule); padding: 20px 0 32px; font-size: .875rem; color: var(--muted); }
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+
+/* =========================================================
+   9. Motion
+   ========================================================= */
+@keyframes fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Primary">
+    <a class="brand" href="#top" data-scroll><span class="brand-long">Bhargavi Shinde</span><span class="brand-short">B. Shinde</span></a>
+    <ul class="nav-links">
+      <li><a href="#work" data-scroll>Work</a></li>
+      <li><a href="#experience" data-scroll>Experience</a></li>
+      <li><a href="#skills" data-scroll>Skills</a></li>
+      <li><a href="#contact" data-scroll>Contact</a></li>
+    </ul>
+    <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch to dark theme">
+      <svg class="icon-moon" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.2 1.1a.6.6 0 0 1 .7.8 5.4 5.4 0 0 0 7.2 7.2.6.6 0 0 1 .8.7A7 7 0 1 1 6.2 1.1Z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3.2" fill="currentColor"/><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M8 .9v1.8M8 13.3v1.8M.9 8h1.8M13.3 8h1.8M3 3l1.3 1.3M11.7 11.7 13 13M3 13l1.3-1.3M11.7 4.3 13 3"/></g></svg>
+    </button>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top" tabindex="-1" aria-labelledby="hero-name">
+    <div class="wrap">
+      <p class="hero-meta" id="hero-meta"></p>
+      <div class="hero-grid">
+        <div>
+          <h1 id="hero-name">Bhargavi Shinde</h1>
+          <p class="hero-thesis" id="hero-thesis"></p>
+        </div>
+        <div class="hero-side">
+          <p class="hero-sub" id="hero-sub" aria-live="polite"></p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#work" data-scroll>View work</a>
+            <a class="btn btn-secondary" id="cta-resume" href="#" target="_blank" rel="noopener">Download résumé</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="lens" id="lens-control">
+        <p class="lens-title label" id="lens-label">Show my work for</p>
+        <div class="seg" role="radiogroup" aria-labelledby="lens-label" id="lens-seg"></div>
+        <button class="link-btn" type="button" id="copy-lens">Copy link to this view</button>
+        <span class="status-inline" id="lens-copy-status" role="status" aria-live="polite"></span>
+      </div>
+
+      <dl class="figures" id="figures" aria-label="Key figures"></dl>
+      <p class="figures-note" id="figures-note"></p>
+
+      <noscript><p>Project details on this page need JavaScript. The full résumé is available at <a href="https://drive.google.com/file/d/1jUQ-UHN9vJGAhidfyzqcQ6mPf2oawGpn/view?usp=drive_link">Google Drive</a>.</p></noscript>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about" tabindex="-1" aria-labelledby="about-h">
+    <div class="wrap section-grid">
+      <div class="section-head"><h2 id="about-h">About</h2></div>
+      <div>
+        <p class="about-text" id="about-text"></p>
+        <dl class="facts" id="facts"></dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORK ============ -->
+  <section class="section" id="work" tabindex="-1" aria-labelledby="work-h">
+    <div class="wrap section-grid">
+      <div class="section-head">
+        <h2 id="work-h">Selected work</h2>
+        <p class="lens-note">Ordered for <strong id="lens-note-name"></strong>. <a href="#lens-control" data-scroll>Change view</a></p>
+      </div>
+      <ol class="projects" id="projects"></ol>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="section" id="experience" tabindex="-1" aria-labelledby="exp-h">
+    <div class="wrap section-grid">
+      <div class="section-head"><h2 id="exp-h">Experience</h2></div>
+      <ol class="timeline" id="timeline"></ol>
+    </div>
+  </section>
+
+  <!-- ============ LEADERSHIP ============ -->
+  <section class="section" id="leadership" tabindex="-1" aria-labelledby="lead-h">
+    <div class="wrap section-grid">
+      <div class="section-head"><h2 id="lead-h">Leadership and activities</h2></div>
+      <ul class="lead-grid" id="lead-grid"></ul>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="section" id="skills" tabindex="-1" aria-labelledby="skills-h">
+    <div class="wrap section-grid">
+      <div class="section-head"><h2 id="skills-h">Skills</h2></div>
+      <div>
+        <div class="skill-groups" id="skill-groups"></div>
+        <p class="skills-legend"><span class="dot" aria-hidden="true"></span>Marked skills are the ones most used in finance and risk analytics work.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CERTIFICATIONS ============ -->
+  <section class="section" id="certifications" tabindex="-1" aria-labelledby="certs-h">
+    <div class="wrap section-grid">
+      <div class="section-head"><h2 id="certs-h">Certifications and achievements</h2></div>
+      <ul class="certs" id="certs"></ul>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact" tabindex="-1" aria-labelledby="contact-h">
+    <div class="wrap section-grid">
+      <div class="section-head"><h2 id="contact-h">Contact</h2></div>
+      <div>
+        <p class="contact-lead" id="contact-lead"></p>
+        <ul class="contact-list" id="contact-list"></ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; <span id="year"></span> Bhargavi Shinde</span>
+    <span id="updated"></span>
+  </div>
+</footer>
+
+<script>
+/* ==========================================================================
+   CONTENT
+   Edit everything here. The layout code below reads from this object.
+   Rule: facts live in the base fields; lens fields change emphasis only.
+   Any text containing [PLACEHOLDER ...] is highlighted on the page.
+   ========================================================================== */
+const SITE = {
+  person: {
+    name: "Bhargavi Shinde",
+    meta: "B.E. Artificial Intelligence & Data Science, University of Mumbai (Datta Meghe College of Engineering). Final year, graduating 2027.",
+    thesis: "I build data and ML tools for the decisions financial institutions make about customers, risk, and trust.",
+    email: "ergo.bhargavi@gmail.com",
+    linkedin: "https://www.linkedin.com/in/ergocoder",
+    github: "https://github.com/ergocoder",
+    // Drive "view" link opens a preview with a download button.
+    // For a direct download instead, use: https://drive.google.com/uc?export=download&id=1jUQ-UHN9vJGAhidfyzqcQ6mPf2oawGpn
+    resume: "https://drive.google.com/file/d/1jUQ-UHN9vJGAhidfyzqcQ6mPf2oawGpn/view?usp=drive_link",
+    about: "I am a final-year student of Artificial Intelligence and Data Science at the University of Mumbai. My interest is where machine learning meets financial decision-making: which customers are at risk, how to evaluate a model when errors carry unequal costs, and whether AI systems stay safe for the people who use them. I graduate in 2027 and am open to internships and graduate roles.",
+    facts: [
+      { k: "Degree", v: "B.E. AI & Data Science" },
+      { k: "College", v: "Datta Meghe College of Engineering, University of Mumbai" },
+      { k: "Graduating", v: "2027" },
+      { k: "Open to", v: "2026–27 internships, 2027 graduate roles" }
+    ],
+    contactLead: "Open to 2026–27 internships and 2027 graduate roles in fintech, data science, and risk.",
+    updated: "Updated September 2026"
+  },
+
+  /* Audience lenses. key = value used in the URL hash (#lens=risk). */
+  defaultLens: "risk",
+  lenses: {
+    ml: {
+      label: "Data Science & ML",
+      sub: "My focus is the full modeling loop: clean data, careful evaluation, and metrics chosen for the problem rather than for the headline.",
+      order: ["churn", "indicsafe", "finance", "munim"]
+    },
+    risk: {
+      label: "Fintech & Risk",
+      sub: "My focus is customer risk scoring, classification when the cases that matter are rare, and testing whether language models stay safe outside English.",
+      order: ["churn", "indicsafe", "munim", "finance"]
+    },
+    finance: {
+      label: "Finance (IB/PE)",
+      sub: "My focus is turning customer and transaction data into KPIs, trends, and recommendations a decision-maker can act on.",
+      order: ["churn", "finance", "munim", "indicsafe"]
+    }
+  },
+
+  figures: [
+    { value: "0.78", label: "ROC-AUC, churn model" },
+    { value: "19% → 70%", label: "Churner recall after class balancing" },
+    { value: "1,000+", label: "Transaction records processed" },
+    { value: "4", label: "Projects, 3 with live demos" }
+  ],
+  figuresNote: "Churn figures measured on 2,000 held-out test customers. Details in Selected work.",
+
+  projects: [
+    {
+      id: "churn",
+      title: "Customer Churn Prediction & Analytics",
+      context: "Retail banking customer data, classification",
+      status: null,
+      summary: "A customer risk scoring model that flags retail banking customers likely to leave, with a deployed dashboard for retention decisions.",
+      chart: "recall",
+      keyfigs: [
+        { v: "0.78", l: "ROC-AUC" },
+        { v: "0.28 → 0.50", l: "F1" },
+        { v: "2,000", l: "test customers" }
+      ],
+      why: {
+        ml: "Shows the full loop from raw data to an evaluated model, including a deliberate recall-first choice on an imbalanced target instead of reporting accuracy.",
+        risk: "When missing an at-risk customer costs more than a false alarm, recall is the metric to optimize. The same logic applies to fraud and credit-risk screening.",
+        finance: "Turns a customer dataset into a retention view a business can read: KPIs, a geographic breakdown, and recommendations tied to the data."
+      },
+      case: {
+        problem: [
+          "About 20% of customers in the dataset churned. On a target that imbalanced, a model can look accurate while missing most of the customers who actually leave.",
+          "The goal was to flag at-risk customers so a retention team could act before they go. Dataset source: [PLACEHOLDER: dataset name and source, e.g. public Kaggle dataset]."
+        ],
+        approach: [
+          "Cleaned and preprocessed the retail banking customer dataset.",
+          "Ran exploratory analysis to identify trends, patterns, and the main drivers of churn.",
+          "Trained a Logistic Regression model, whose coefficients can be inspected directly.",
+          "Applied class balancing to address the 20% churn imbalance. Balancing usually raises recall at some cost to precision, so the model was judged on recall and F1 rather than accuracy.",
+          "Evaluated on 2,000 held-out test customers."
+        ],
+        resultTable: {
+          caption: "Churner class, 2,000 test customers",
+          head: ["Metric", "Before balancing", "After balancing"],
+          rows: [["Recall", "19%", "70%"], ["F1", "0.28", "0.50"]]
+        },
+        result: [
+          "ROC-AUC of 0.78.",
+          "Deployed an interactive Streamlit dashboard with KPI tracking, geographic churn analysis, and data-driven retention recommendations."
+        ],
+        next: [
+          "Set the decision threshold using the cost of a retention offer against the value of a lost customer, instead of the default 0.5.",
+          "Add SHAP explanations so each flagged customer comes with the factors behind the score, supporting model transparency.",
+          "Calibrate predicted probabilities so scores can be read as likelihoods.",
+          "Benchmark against a gradient-boosted model under the same evaluation setup."
+        ],
+        stack: ["Python", "Pandas", "Scikit-learn", "Streamlit"],
+        links: [
+          { label: "Code on GitHub", href: "https://github.com/ergocoder/customer-churn-analytics" },
+          { label: "Live dashboard", href: "https://customer-churn-analytics-dash.streamlit.app/" }
+        ]
+      }
+    },
+    {
+      id: "indicsafe",
+      title: "IndicSafe: Safety Evaluation Framework for Indian Code-Mixed LLMs",
+      context: "NLP, LLM safety",
+      status: "Ongoing research",
+      summary: "A labeled dataset and evaluation methodology for testing how large language models handle benign and adversarial prompts written in code-mixed Indian languages such as Hinglish.",
+      keyfigs: [],
+      why: {
+        ml: "Evaluation design before results: building a labeled benchmark and a defensible methodology comes first.",
+        risk: "Model risk and AI governance. An institution serving Indian customers in mixed languages needs evidence of how its models behave beyond English-only testing.",
+        finance: "Relevant to AI governance: how a firm would test a language model before putting it in front of customers."
+      },
+      case: {
+        problem: [
+          "Safety evaluations for language models are often built around English prompts. Many Indian users write in code-mixed language, such as Hinglish.",
+          "Whether safety behaviour and jailbreak resistance hold up under code-mixing is the question this project is set up to test."
+        ],
+        approach: [
+          "Designing a labeled dataset of benign and adversarial code-mixed prompts.",
+          "Building a methodology to evaluate LLM safety and jailbreak robustness."
+        ],
+        result: [
+          "In progress. No results are reported yet."
+        ],
+        next: [
+          "Run a pilot evaluation across a small set of models once the dataset is labeled.",
+          "Measure inter-annotator agreement so the labels can be trusted.",
+          "Publish the dataset card and methodology for review."
+        ],
+        stack: ["NLP", "LLM safety evaluation"],
+        links: []
+      }
+    },
+    {
+      id: "finance",
+      title: "Personal Finance Analytics Dashboard",
+      context: "Transaction data, reporting",
+      status: null,
+      summary: "An ingestion, cleaning, and reporting workflow that turns raw CSV and XLSX transaction exports into spending KPIs and monthly trends.",
+      keyfigs: [
+        { v: "1,000+", l: "transactions processed" },
+        { v: "CSV + XLSX", l: "inputs" }
+      ],
+      why: {
+        ml: "Practical data preparation: inconsistent files cleaned into one reliable structure before any analysis is run.",
+        risk: "The same ingestion and cleaning problem sits underneath spend analytics and transaction monitoring.",
+        finance: "KPI cards, monthly trends, and category filters over 1,000+ transactions: the reporting layer an analyst builds for a decision-maker."
+      },
+      case: {
+        problem: [
+          "Transaction exports arrive as inconsistent CSV and XLSX files. That makes it hard to see where money goes from month to month."
+        ],
+        approach: [
+          "Built a CSV/XLSX ingestion and cleaning workflow.",
+          "Performed exploratory analysis on spending patterns and monthly trends.",
+          "Presented results in Streamlit with Plotly charts."
+        ],
+        result: [
+          "Processed 1,000+ real-world financial transaction records.",
+          "Delivered KPI cards, category filters, and automated insights in a live dashboard."
+        ],
+        next: [
+          "Auto-categorize uncategorized transactions with rules first, then a simple classifier.",
+          "Flag unusual transactions against each category's normal range.",
+          "Add a budget-versus-actual variance view.",
+          "Detect recurring payments and subscriptions."
+        ],
+        stack: ["Python", "Pandas", "Plotly", "Streamlit"],
+        links: [
+          { label: "Code on GitHub", href: "https://github.com/ergocoder/personal-finance-dashboard" },
+          { label: "Live dashboard", href: "https://personal-finance-analytics-dashboard.streamlit.app/" }
+        ]
+      }
+    },
+    {
+      id: "munim",
+      title: "MUNI-M: Financial Awareness Platform",
+      context: "SummerHacks 2026 hackathon, fintech",
+      status: null,
+      summary: "A hackathon fintech platform to help users understand their spending. I led domain research, feature planning, and documentation.",
+      keyfigs: [],
+      why: {
+        ml: "Product framing for data features: deciding which spending insights and visualizations are worth building.",
+        risk: "Consumer fintech: research and feature planning around how people understand their own spending.",
+        finance: "Domain research, scoping, and documentation under a hackathon deadline, with the output written for a non-technical user."
+      },
+      case: {
+        problem: [
+          "People make spending decisions without a clear view of their own patterns."
+        ],
+        approach: [
+          "Led domain research, feature planning, and documentation for the team.",
+          "Designed spending-insight and data-visualization features aimed at better financial decisions."
+        ],
+        result: [
+          "Built during SummerHacks 2026. Live demo available."
+        ],
+        next: [
+          "Test the insight features with a small group of users and record which ones change what they do.",
+          "Define a small set of success metrics before adding features."
+        ],
+        stack: ["[PLACEHOLDER: tech stack used]"],
+        links: [
+          { label: "Live demo", href: "https://muni-m.web.app/" }
+          // [PLACEHOLDER] Optional: add { label: "Code on GitHub", href: "..." }
+        ]
+      }
+    }
+  ],
+
+  experience: [
+    {
+      role: "Project Intern, Inventory Management System",
+      org: "Datta Meghe College of Engineering (DMCE), Computer Department",
+      dates: "Dec 2025 – Present",
+      points: [
+        "Leading frontend development of an inventory management system, building responsive React interfaces.",
+        "Integrating frontend components with backend workflows for asset tracking and inventory data management."
+      ]
+    }
+  ],
+
+  leadership: [
+    { title: "Team Lead", org: "Smart India Hackathon 2025", text: "Led project coordination and presentations through the online selection phase." },
+    { title: "Technical Team Member", org: "CSI-CATT, 2025–2026", text: "Planned and ran hackathons and research paper conferences." },
+    { title: "Maintainer & Contributor", org: "Hacktoberfest 2025", text: "Reviewed contributions and supported open-source collaboration." }
+  ],
+
+  /* fin: true marks finance-relevant skills (highlighted in Fintech and Finance lenses) */
+  skills: [
+    { group: "Languages", items: [{ n: "Python" }, { n: "SQL", fin: true }, { n: "JavaScript" }, { n: "HTML" }, { n: "CSS" }] },
+    { group: "Data & ML", items: [
+      { n: "Exploratory data analysis", fin: true }, { n: "Data cleaning & preprocessing" }, { n: "Feature engineering" },
+      { n: "Classification", fin: true }, { n: "Predictive modeling" }, { n: "Model evaluation", fin: true },
+      { n: "Statistical analysis" }, { n: "Handling class imbalance" }
+    ] },
+    { group: "Libraries", items: [{ n: "Pandas" }, { n: "NumPy" }, { n: "Scikit-learn" }, { n: "Matplotlib" }, { n: "Plotly" }, { n: "TensorFlow" }, { n: "Keras" }] },
+    { group: "Tools", items: [{ n: "Streamlit dashboards", fin: true }, { n: "Excel", fin: true }, { n: "Git" }, { n: "GitHub" }, { n: "Notion" }, { n: "React" }] }
+  ],
+
+  certs: [
+    { title: "2nd Position, AI Spark Intra-Departmental Project Competition (TeachMate project)", issuer: "Dept. of AI & Data Science, DMCE" },
+    { title: "Discrete Mathematics", issuer: "NPTEL" },
+    { title: "Cloud Foundations badge", issuer: "AWS Academy" },
+    { title: "Android Developer Virtual Internship", issuer: "EduSkills × Google for Developers" }
+  ]
+};
+
+/* ==========================================================================
+   APP
+   ========================================================================== */
+(function () {
+  "use strict";
+
+  const $ = (sel, root = document) => root.querySelector(sel);
+  const root = document.documentElement;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  const openCases = new Set();
+  let currentLens = SITE.defaultLens;
+
+  /* Escape text, then highlight any [PLACEHOLDER ...] so gaps stay visible */
+  function esc(str) {
+    return String(str)
+      .replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]))
+      .replace(/\[PLACEHOLDER[^\]]*\]/g, m => `<span class="placeholder">${m}</span>`);
+  }
+  const extLink = (href, label) => `<a class="ext" href="${esc(href)}" target="_blank" rel="noopener">${esc(label)}<span class="sr-only"> (opens in a new tab)</span></a>`;
+
+  /* ---------- Clipboard with fallback ---------- */
+  async function copyText(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch (e) {
+      const ta = document.createElement("textarea");
+      ta.value = text; ta.setAttribute("readonly", "");
+      ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      let ok = false;
+      try { ok = document.execCommand("copy"); } catch (_) {}
+      ta.remove();
+      return ok;
+    }
+  }
+  function flash(el, msg) {
+    el.textContent = msg;
+    clearTimeout(el._t);
+    el._t = setTimeout(() => { el.textContent = ""; }, 2500);
+  }
+
+  /* ---------- Theme ---------- */
+  function effectiveTheme() {
+    const set = root.getAttribute("data-theme");
+    return set || (darkQuery.matches ? "dark" : "light");
+  }
+  function syncThemeUI() {
+    const t = effectiveTheme();
+    root.setAttribute("data-effective-theme", t);
+    $("#theme-btn").setAttribute("aria-label", t === "dark" ? "Switch to light theme" : "Switch to dark theme");
+  }
+  $("#theme-btn").addEventListener("click", () => {
+    const next = effectiveTheme() === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+    syncThemeUI();
+  });
+  darkQuery.addEventListener("change", syncThemeUI);
+
+  /* ---------- Static sections ---------- */
+  function renderStatic() {
+    const p = SITE.person;
+    $("#hero-meta").innerHTML = esc(p.meta);
+    $("#hero-thesis").innerHTML = esc(p.thesis);
+    $("#cta-resume").href = p.resume;
+
+    $("#figures").innerHTML = SITE.figures.map(f =>
+      `<div class="figure"><dt>${esc(f.label)}</dt><dd class="figure-value">${esc(f.value)}</dd></div>`
+    ).join("");
+    $("#figures-note").textContent = SITE.figuresNote;
+
+    $("#about-text").innerHTML = esc(p.about);
+    $("#facts").innerHTML = p.facts.map(f => `<div><dt>${esc(f.k)}</dt><dd>${esc(f.v)}</dd></div>`).join("");
+
+    $("#timeline").innerHTML = SITE.experience.map(e => `
+      <li class="tl-item">
+        <div class="tl-date">${esc(e.dates)}</div>
+        <div>
+          <h3>${esc(e.role)}</h3>
+          <p class="tl-org">${esc(e.org)}</p>
+          <ul>${e.points.map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+        </div>
+      </li>`).join("");
+
+    $("#lead-grid").innerHTML = SITE.leadership.map(l => `
+      <li><h3>${esc(l.title)}</h3><p class="meta">${esc(l.org)}</p><p>${esc(l.text)}</p></li>`).join("");
+
+    $("#skill-groups").innerHTML = SITE.skills.map((g, i) => `
+      <div class="skill-group">
+        <h3 id="sg-${i}">${esc(g.group)}</h3>
+        <ul class="chips" aria-labelledby="sg-${i}">
+          ${g.items.map(s => `<li class="chip"${s.fin ? ' data-fin="true"' : ""}>${esc(s.n)}</li>`).join("")}
+        </ul>
+      </div>`).join("");
+
+    $("#certs").innerHTML = SITE.certs.map(c =>
+      `<li><span>${esc(c.title)}</span><span class="issuer">${esc(c.issuer)}</span></li>`).join("");
+
+    $("#contact-lead").innerHTML = esc(p.contactLead);
+    $("#contact-list").innerHTML = `
+      <li><span class="k">Email</span><span class="v">
+        <a href="mailto:${esc(p.email)}">${esc(p.email)}</a>
+        <button class="copy-btn" type="button" id="copy-email">Copy email</button>
+        <span class="status-inline" id="email-status" role="status" aria-live="polite"></span>
+      </span></li>
+      <li><span class="k">LinkedIn</span><span class="v">${extLink(p.linkedin, "linkedin.com/in/ergocoder")}</span></li>
+      <li><span class="k">GitHub</span><span class="v">${extLink(p.github, "github.com/ergocoder")}</span></li>
+      <li><span class="k">Résumé</span><span class="v">${extLink(p.resume, "Download résumé (PDF)")}</span></li>`;
+
+    $("#copy-email").addEventListener("click", async () => {
+      const ok = await copyText(p.email);
+      flash($("#email-status"), ok ? "Email copied" : "Copy failed. Select the address instead.");
+    });
+
+    $("#year").textContent = new Date().getFullYear();
+    $("#updated").textContent = p.updated;
+  }
+
+  /* ---------- Churn recall chart (inline SVG) ---------- */
+  function recallChart(id) {
+    const x0 = 58, w = 230;               // bar origin and width for 100%
+    const bw = pct => (pct / 100) * w;
+    return `
+    <figure class="chart">
+      <svg viewBox="0 0 330 92" role="img" aria-labelledby="${id}-t ${id}-d">
+        <title id="${id}-t">Churner recall before and after class balancing</title>
+        <desc id="${id}-d">Recall rose from 19 percent before class balancing to 70 percent after, on 2,000 test customers.</desc>
+        <text x="0" y="23">Before</text>
+        <rect class="track" x="${x0}" y="12" width="${w}" height="16"/>
+        <rect class="bar-before" x="${x0}" y="12" width="${bw(19)}" height="16"/>
+        <text class="val" x="${x0 + bw(19) + 6}" y="24">19%</text>
+        <text x="0" y="51">After</text>
+        <rect class="track" x="${x0}" y="40" width="${w}" height="16"/>
+        <rect class="bar-after" x="${x0}" y="40" width="${bw(70)}" height="16"/>
+        <text class="val" x="${x0 + bw(70) + 6}" y="52">70%</text>
+        <line class="axis" x1="${x0}" y1="66" x2="${x0 + w}" y2="66"/>
+        <text class="tick" x="${x0}" y="80" text-anchor="start">0</text>
+        <text class="tick" x="${x0 + w / 2}" y="80" text-anchor="middle">50%</text>
+        <text class="tick" x="${x0 + w}" y="80" text-anchor="end">100%</text>
+      </svg>
+      <figcaption>Churner recall, 2,000 test customers</figcaption>
+    </figure>`;
+  }
+
+  /* ---------- Projects ---------- */
+  function caseStudy(pr) {
+    const c = pr.case;
+    const list = arr => `<ul>${arr.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
+    const paras = arr => arr.map(x => `<p>${esc(x)}</p>`).join("");
+    const table = c.resultTable ? `
+      <div class="table-scroll"><table class="mtable">
+        <caption>${esc(c.resultTable.caption)}</caption>
+        <thead><tr>${c.resultTable.head.map(h => `<th scope="col">${esc(h)}</th>`).join("")}</tr></thead>
+        <tbody>${c.resultTable.rows.map(r => `<tr><th scope="row">${esc(r[0])}</th><td>${esc(r[1])}</td><td class="up">${esc(r[2])}</td></tr>`).join("")}</tbody>
+      </table></div>` : "";
+    const links = c.links.length
+      ? `<div class="links-row">${c.links.map(l => extLink(l.href, l.label)).join("")}</div>`
+      : `<p>No public links yet.</p>`;
+    return `
+      <div class="case-body">
+        <div class="case-row"><h4>Problem</h4><div>${paras(c.problem)}</div></div>
+        <div class="case-row"><h4>Approach</h4><div>${list(c.approach)}</div></div>
+        <div class="case-row"><h4>Result</h4><div>${table}${list(c.result)}</div></div>
+        <div class="case-row"><h4>What I'd do next</h4><div><span class="future-tag">Future work, not yet done</span>${list(c.next)}</div></div>
+        <div class="case-row"><h4>Stack</h4><div><ul class="stack">${c.stack.map(s => `<li>${esc(s)}</li>`).join("")}</ul></div></div>
+        <div class="case-row"><h4>Links</h4><div>${links}</div></div>
+      </div>`;
+  }
+
+  function projectCard(pr, lensKey) {
+    const open = openCases.has(pr.id);
+    const cid = `case-${pr.id}`;
+    const quick = pr.case.links.map(l => extLink(l.href, l.label)).join("");
+    return `
+    <li class="project" id="project-${pr.id}">
+      <article aria-labelledby="title-${pr.id}">
+        <div class="project-top">
+          <p class="project-context" style="margin:0">${esc(pr.context)}</p>
+          ${pr.status ? `<span class="badge">${esc(pr.status)}</span>` : ""}
+        </div>
+        <h3 id="title-${pr.id}">${esc(pr.title)}</h3>
+        <p class="project-summary">${esc(pr.summary)}</p>
+        <div class="why"><span class="label">Why this matters for ${esc(SITE.lenses[lensKey].label)}</span><p>${esc(pr.why[lensKey])}</p></div>
+        <div class="project-body">
+          <div>
+            ${pr.keyfigs.length ? `<ul class="keyfigs">${pr.keyfigs.map(k => `<li><b>${esc(k.v)}</b>${esc(k.l)}</li>`).join("")}</ul>` : ""}
+            <div class="project-actions">
+              <button class="toggle" type="button" aria-expanded="${open}" aria-controls="${cid}" data-id="${pr.id}">
+                <span>${open ? "Hide case study" : "Read case study"}</span>
+                <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+              </button>
+              ${quick}
+            </div>
+          </div>
+          ${pr.chart === "recall" ? recallChart("chart-" + pr.id) : ""}
+        </div>
+        <div class="case${open ? " open" : ""}" id="${cid}" role="region" aria-labelledby="title-${pr.id}">
+          <div class="case-inner">${caseStudy(pr)}</div>
+        </div>
+      </article>
+    </li>`;
+  }
+
+  function renderProjects(lensKey, animate) {
+    const list = $("#projects");
+    const byId = Object.fromEntries(SITE.projects.map(p => [p.id, p]));
+    list.innerHTML = SITE.lenses[lensKey].order.map(id => projectCard(byId[id], lensKey)).join("");
+    if (animate && !reduceMotion.matches) {
+      list.classList.remove("swap"); void list.offsetWidth; list.classList.add("swap");
+    }
+  }
+
+  // Event delegation for case-study toggles (survives re-render)
+  $("#projects").addEventListener("click", e => {
+    const btn = e.target.closest(".toggle");
+    if (!btn) return;
+    const id = btn.dataset.id;
+    const panel = document.getElementById(btn.getAttribute("aria-controls"));
+    const willOpen = btn.getAttribute("aria-expanded") !== "true";
+    willOpen ? openCases.add(id) : openCases.delete(id);
+    btn.setAttribute("aria-expanded", String(willOpen));
+    btn.querySelector("span").textContent = willOpen ? "Hide case study" : "Read case study";
+    panel.classList.toggle("open", willOpen);
+  });
+
+  /* ---------- Lens control ---------- */
+  const lensKeys = Object.keys(SITE.lenses);
+
+  function renderLensControl() {
+    $("#lens-seg").innerHTML = lensKeys.map(k =>
+      `<button type="button" role="radio" data-lens="${k}" aria-checked="false" tabindex="-1">${esc(SITE.lenses[k].label)}</button>`
+    ).join("");
+  }
+
+  function lensFromHash() {
+    const m = location.hash.match(/lens=([a-z]+)/);
+    return m && SITE.lenses[m[1]] ? m[1] : null;
+  }
+
+  function applyLens(key, { animate = false, updateHash = false } = {}) {
+    currentLens = key;
+    root.setAttribute("data-lens", key);
+
+    document.querySelectorAll("#lens-seg [role=radio]").forEach(b => {
+      const on = b.dataset.lens === key;
+      b.setAttribute("aria-checked", String(on));
+      b.tabIndex = on ? 0 : -1;
+    });
+
+    const sub = $("#hero-sub");
+    sub.textContent = SITE.lenses[key].sub;
+    if (animate && !reduceMotion.matches) { sub.classList.remove("swap"); void sub.offsetWidth; sub.classList.add("swap"); }
+
+    $("#lens-note-name").textContent = SITE.lenses[key].label;
+    renderProjects(key, animate);
+
+    if (updateHash) history.replaceState(null, "", "#lens=" + key);
+  }
+
+  $("#lens-seg").addEventListener("click", e => {
+    const b = e.target.closest("[role=radio]");
+    if (b) applyLens(b.dataset.lens, { animate: true, updateHash: true });
+  });
+  $("#lens-seg").addEventListener("keydown", e => {
+    const idx = lensKeys.indexOf(currentLens);
+    let next = null;
+    if (e.key === "ArrowRight" || e.key === "ArrowDown") next = (idx + 1) % lensKeys.length;
+    else if (e.key === "ArrowLeft" || e.key === "ArrowUp") next = (idx - 1 + lensKeys.length) % lensKeys.length;
+    else if (e.key === "Home") next = 0;
+    else if (e.key === "End") next = lensKeys.length - 1;
+    if (next === null) return;
+    e.preventDefault();
+    applyLens(lensKeys[next], { animate: true, updateHash: true });
+    $(`#lens-seg [data-lens="${lensKeys[next]}"]`).focus();
+  });
+
+  $("#copy-lens").addEventListener("click", async () => {
+    const url = location.origin + location.pathname + "#lens=" + currentLens;
+    const ok = await copyText(url);
+    flash($("#lens-copy-status"), ok ? "Link copied" : "Copy failed");
+  });
+
+  window.addEventListener("hashchange", () => {
+    const k = lensFromHash();
+    if (k && k !== currentLens) applyLens(k, { animate: true });
+  });
+
+  /* ---------- In-page nav: scroll without overwriting the #lens hash ---------- */
+  document.addEventListener("click", e => {
+    const a = e.target.closest("a[data-scroll]");
+    if (!a) return;
+    const id = a.getAttribute("href").slice(1);
+    const target = document.getElementById(id);
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: reduceMotion.matches ? "auto" : "smooth", block: "start" });
+    const focusEl = id === "lens-control" ? $("#lens-seg [aria-checked=true]") : target;
+    if (focusEl) focusEl.focus({ preventScroll: true });
+  });
+
+  /* ---------- Init ---------- */
+  syncThemeUI();
+  renderStatic();
+  renderLensControl();
+  applyLens(lensFromHash() || SITE.defaultLens);
+})();
+</script>
+</body>
+</html>
