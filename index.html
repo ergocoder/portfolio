@@ -477,6 +477,23 @@ section:focus, main:focus { outline: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Independent QA */
+.qa h3 { font-size: clamp(1.35rem, 2.4vw, 1.7rem); margin: 6px 0 10px; max-width: 34ch; }
+.qa-points { padding-left: 1.1em; max-width: 64ch; margin: 18px 0 0; }
+.qa-points li { margin-bottom: 6px; }
+.qa-sev { margin: 22px 0 0; max-width: 460px; }
+.qa-sev .label { display: block; margin-bottom: 6px; }
+.sev-bar { display: flex; height: 10px; border: 1px solid var(--rule-strong); border-radius: 2px; overflow: hidden; }
+.sev-bar span { display: block; height: 100%; }
+.sev-high { background: var(--accent); }
+.sev-medium { background: var(--bar-muted); }
+.sev-low { background: var(--surface); }
+.sev-legend { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 20px; margin-top: 8px; font-size: .875rem; color: var(--muted); }
+.sev-legend b { color: var(--ink); font-weight: 500; font-variant-numeric: tabular-nums lining-nums; margin-right: 4px; }
+.sev-legend i { display: inline-block; width: 9px; height: 9px; margin-right: 6px; border: 1px solid var(--rule-strong); }
+.qa-meta { margin-top: 22px; }
+
 </style>
 </head>
 
@@ -560,6 +577,14 @@ section:focus, main:focus { outline: none; }
     <div class="wrap section-grid">
       <div class="section-head"><h2 id="exp-h">Experience</h2></div>
       <ol class="timeline" id="timeline"></ol>
+    </div>
+  </section>
+
+  <!-- ============ INDEPENDENT QA ============ -->
+  <section class="section" id="qa" tabindex="-1" aria-labelledby="qa-h">
+    <div class="wrap section-grid">
+      <div class="section-head"><h2 id="qa-h">Independent QA</h2></div>
+      <div class="qa" id="qa-body"></div>
     </div>
   </section>
 
@@ -840,6 +865,33 @@ const SITE = {
     }
   ],
 
+  /* Independent QA entry. Facts only; lens fields change emphasis, not facts. */
+  qa: {
+    title: "Website QA & Debugging — SynLoop",
+    context: "Independent QA testing",
+    summary: "Conducted a structured manual QA review covering navigation, routing, form validation, UI behavior, edge cases, and console errors. Identified and documented 13 issues with severity classification, expected vs. actual behavior, and supporting evidence.",
+    why: {
+      ml: "Testing starts from a stated expectation and records where behavior deviates. It is the same discipline as model evaluation.",
+      risk: "Probing invalid input and edge cases is the same habit as stress-testing a model before anyone relies on it.",
+      finance: "Findings are ranked by severity and written as expected versus actual, so a non-technical reader can decide what to fix first."
+    },
+    points: [
+      "Identified high-severity routing and broken-link issues",
+      "Tested form validation and invalid-input handling",
+      "Investigated UI overflow and interaction issues",
+      "Documented reproducible bugs with screenshots and expected/actual behavior"
+    ],
+    severity: [
+      { level: "High", count: 8 },
+      { level: "Medium", count: 3 },
+      { level: "Low", count: 2 }
+    ],
+    areas: ["Navigation & routing", "Form validation", "UI consistency", "Edge cases", "Console errors"],
+    // Optional: paste a public link to the report PDF. Leave "" to hide the link.
+    report: ""
+  },
+
+
   leadership: [
     { title: "Team Lead", org: "Smart India Hackathon 2025", text: "Led project coordination and presentations through the online selection phase." },
     { title: "Technical Team Member", org: "CSI-CATT, 2025–2026", text: "Planned and ran hackathons and research paper conferences." },
@@ -1093,6 +1145,30 @@ const SITE = {
     panel.classList.toggle("open", willOpen);
   });
 
+    /* ---------- Independent QA ---------- */
+  function renderQA(lensKey) {
+    const q = SITE.qa;
+    const total = q.severity.reduce((n, s) => n + s.count, 0);
+    const cls = s => "sev-" + s.level.toLowerCase();
+    $("#qa-body").innerHTML = `
+      <article aria-labelledby="qa-title">
+        <p class="project-context" style="margin:0">${esc(q.context)}</p>
+        <h3 id="qa-title">${esc(q.title)}</h3>
+        <p class="project-summary">${esc(q.summary)}</p>
+        <div class="why"><span class="label">Why this matters for ${esc(SITE.lenses[lensKey].label)}</span><p>${esc(q.why[lensKey])}</p></div>
+        <ul class="qa-points">${q.points.map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+        <div class="qa-sev" role="group" aria-label="${total} issues found by severity">
+          <span class="label">${total} issues by severity</span>
+          <div class="sev-bar" aria-hidden="true">${q.severity.map(s => `<span class="${cls(s)}" style="width:${(s.count / total * 100).toFixed(2)}%"></span>`).join("")}</div>
+          <ul class="sev-legend">${q.severity.map(s => `<li><i class="${cls(s)}" aria-hidden="true"></i><b>${s.count}</b>${esc(s.level)}</li>`).join("")}</ul>
+        </div>
+        <div class="qa-meta">
+          <ul class="stack" aria-label="Areas tested">${q.areas.map(a => `<li>${esc(a)}</li>`).join("")}</ul>
+          ${q.report ? `<p style="margin:14px 0 0">${extLink(q.report, "View QA report (PDF)")}</p>` : ""}
+        </div>
+      </article>`;
+  }
+  
   /* ---------- Lens control ---------- */
   const lensKeys = Object.keys(SITE.lenses);
 
@@ -1123,6 +1199,7 @@ const SITE = {
 
     $("#lens-note-name").textContent = SITE.lenses[key].label;
     renderProjects(key, animate);
+    renderQA(key);
 
     if (updateHash) history.replaceState(null, "", "#lens=" + key);
   }
