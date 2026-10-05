@@ -3,28 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bhargavi Shinde — Data Science, ML & Fintech</title>
-<meta name="description" content="Bhargavi Shinde, final-year AI & Data Science student (University of Mumbai, 2027). Data and ML work on customer risk scoring, transaction analytics, and LLM safety evaluation. Open to internships and graduate roles in fintech, data science, and risk.">
+<title>Bhargavi Shinde — AI, ML & Data Science</title>
+<meta name="description" content="Bhargavi Shinde, final-year AI & Data Science student (University of Mumbai, 2027). Machine learning pipelines, data dashboards, and LLM safety research in Python. Open to internships in AI, ML, data science, and data analytics.">
 <meta name="author" content="Bhargavi Shinde">
-<!-- [PLACEHOLDER] Replace https://your-domain.example/ with your live site URL (3 places below + JSON-LD) -->
-<link rel="canonical" href="https://your-domain.example/">
+<link rel="canonical" href="https://ergocoder.github.io/portfolio/">
 <meta name="theme-color" content="#F5F1E8" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0E1622" media="(prefers-color-scheme: dark)">
 
 <!-- Open Graph -->
 <meta property="og:type" content="profile">
-<meta property="og:title" content="Bhargavi Shinde — Data Science, ML & Fintech">
-<meta property="og:description" content="Data and ML tools for the decisions financial institutions make about customers, risk, and trust.">
-<meta property="og:url" content="https://your-domain.example/">
+<meta property="og:title" content="Bhargavi Shinde — AI, ML & Data Science">
+<meta property="og:description" content="Machine learning and data tools that turn messy, real-world data into decisions people can act on.">
+<meta property="og:url" content="https://ergocoder.github.io/portfolio/">
 <!-- [PLACEHOLDER] Optional: add a 1200x630 preview image and uncomment -->
-<!-- <meta property="og:image" content="https://your-domain.example/og.png"> -->
+<!-- <meta property="og:image" content="https://ergocoder.github.io/portfolio/og.png"> -->
 <meta property="profile:first_name" content="Bhargavi">
 <meta property="profile:last_name" content="Shinde">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bhargavi Shinde — Data Science, ML & Fintech">
-<meta name="twitter:description" content="Data and ML tools for the decisions financial institutions make about customers, risk, and trust.">
+<meta name="twitter:title" content="Bhargavi Shinde — AI, ML & Data Science">
+<meta name="twitter:description" content="Machine learning and data tools that turn messy, real-world data into decisions people can act on.">
 
 <!-- JSON-LD Person schema -->
 <script type="application/ld+json">
@@ -32,7 +31,7 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Bhargavi Shinde",
-  "url": "https://your-domain.example/",
+  "url": "https://ergocoder.github.io/portfolio/",
   "email": "mailto:ergo.bhargavi@gmail.com",
   "jobTitle": "AI & Data Science Student",
   "alumniOf": {
@@ -43,7 +42,7 @@
     "https://www.linkedin.com/in/ergocoder",
     "https://github.com/ergocoder"
   ],
-  "knowsAbout": ["Machine learning", "Data science", "Exploratory data analysis", "Classification", "Customer churn prediction", "LLM safety evaluation", "Python", "SQL"]
+  "knowsAbout": ["Machine learning", "Data science", "Data analysis", "Entity resolution", "Exploratory data analysis", "Classification", "Customer churn prediction", "LLM safety evaluation", "Python", "SQL"]
 }
 </script>
 
@@ -434,21 +433,25 @@ section:focus, main:focus { outline: none; }
   font-size: .9375rem; padding: 4px 11px; border: 1px solid var(--rule); border-radius: 2px;
   background: transparent; transition: background var(--dur), border-color var(--dur);
 }
-/* Finance-relevant skills are marked only in the fintech and finance lenses */
-:root[data-lens="risk"] .chip[data-fin], :root[data-lens="finance"] .chip[data-fin] {
+/* Skills used most in the selected view are marked (data-hl lists the lens keys) */
+:root[data-lens="ai"] .chip[data-hl~="ai"],
+:root[data-lens="ds"] .chip[data-hl~="ds"],
+:root[data-lens="da"] .chip[data-hl~="da"] {
   background: var(--accent-soft); border-color: var(--accent); color: var(--ink);
 }
-:root[data-lens="risk"] .chip[data-fin]::before, :root[data-lens="finance"] .chip[data-fin]::before {
+:root[data-lens="ai"] .chip[data-hl~="ai"]::before,
+:root[data-lens="ds"] .chip[data-hl~="ds"]::before,
+:root[data-lens="da"] .chip[data-hl~="da"]::before {
   content: ""; display: inline-block; width: 6px; height: 6px; background: var(--accent);
   border-radius: 50%; margin-right: 7px; vertical-align: middle; transform: translateY(-1px);
 }
-.skills-legend { display: none; font-size: .875rem; color: var(--muted); margin-top: 18px; }
-:root[data-lens="risk"] .skills-legend, :root[data-lens="finance"] .skills-legend { display: block; }
+.skills-legend { font-size: .875rem; color: var(--muted); margin-top: 18px; }
 .skills-legend .dot { display: inline-block; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; margin-right: 6px; vertical-align: middle; }
 @media (max-width: 560px) { .skill-group { grid-template-columns: 1fr; } .skill-group h3 { padding-top: 0; } }
 
 .certs { list-style: none; border-top: 1px solid var(--rule); }
 .certs li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 18ch); gap: 4px 24px; padding: 12px 0; border-bottom: 1px solid var(--rule); }
+.certs a.ext { margin-left: 10px; font-size: .875rem; white-space: nowrap; }
 .certs .issuer { color: var(--muted); font-size: .9375rem; text-align: right; }
 @media (max-width: 560px) { .certs li { grid-template-columns: 1fr; } .certs .issuer { text-align: left; } }
 
@@ -546,7 +549,7 @@ section:focus, main:focus { outline: none; }
       <dl class="figures" id="figures" aria-label="Key figures"></dl>
       <p class="figures-note" id="figures-note"></p>
 
-      <noscript><p>Project details on this page need JavaScript. The full résumé is available at <a href="https://drive.google.com/file/d/1jUQ-UHN9vJGAhidfyzqcQ6mPf2oawGpn/view?usp=drive_link">Google Drive</a>.</p></noscript>
+      <noscript><p>Project details on this page need JavaScript. The full résumé is available at <a href="https://drive.google.com/file/d/1L8fxlYUGNQ8f2gu0D9CuEqN3NZlZaiDJ/view?usp=sharing">Google Drive</a>.</p></noscript>
     </div>
   </section>
 
@@ -580,14 +583,6 @@ section:focus, main:focus { outline: none; }
     </div>
   </section>
 
-  <!-- ============ INDEPENDENT QA ============ -->
-  <section class="section" id="qa" tabindex="-1" aria-labelledby="qa-h">
-    <div class="wrap section-grid">
-      <div class="section-head"><h2 id="qa-h">Independent QA</h2></div>
-      <div class="qa" id="qa-body"></div>
-    </div>
-  </section>
-
   <!-- ============ LEADERSHIP ============ -->
   <section class="section" id="leadership" tabindex="-1" aria-labelledby="lead-h">
     <div class="wrap section-grid">
@@ -602,8 +597,16 @@ section:focus, main:focus { outline: none; }
       <div class="section-head"><h2 id="skills-h">Skills</h2></div>
       <div>
         <div class="skill-groups" id="skill-groups"></div>
-        <p class="skills-legend"><span class="dot" aria-hidden="true"></span>Marked skills are the ones most used in finance and risk analytics work.</p>
+        <p class="skills-legend"><span class="dot" aria-hidden="true"></span>Marked skills are the ones this view draws on most. Switch the view above to change them.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ INDEPENDENT QA ============ -->
+  <section class="section" id="qa" tabindex="-1" aria-labelledby="qa-h">
+    <div class="wrap section-grid">
+      <div class="section-head"><h2 id="qa-h">Independent QA</h2></div>
+      <div class="qa" id="qa-body"></div>
     </div>
   </section>
 
@@ -645,53 +648,98 @@ const SITE = {
   person: {
     name: "Bhargavi Shinde",
     meta: "B.E. Artificial Intelligence & Data Science, University of Mumbai (Datta Meghe College of Engineering). Final year, graduating 2027.",
-    thesis: "I build data and ML tools for the decisions financial institutions make about customers, risk, and trust.",
+    thesis: "I build machine learning and data tools that turn messy, real-world data into decisions people can act on.",
     email: "ergo.bhargavi@gmail.com",
     linkedin: "https://www.linkedin.com/in/ergocoder",
     github: "https://github.com/ergocoder",
     // Drive "view" link opens a preview with a download button.
-    // For a direct download instead, use: https://drive.google.com/uc?export=download&id=1jUQ-UHN9vJGAhidfyzqcQ6mPf2oawGpn
-    resume: "https://drive.google.com/file/d/1jUQ-UHN9vJGAhidfyzqcQ6mPf2oawGpn/view?usp=drive_link",
-    about: "I am a final-year student of Artificial Intelligence and Data Science at the University of Mumbai. My interest is where machine learning meets financial decision-making: which customers are at risk, how to evaluate a model when errors carry unequal costs, and whether AI systems stay safe for the people who use them. I graduate in 2027 and am open to internships and graduate roles.",
+    // For a direct download instead, use: https://drive.google.com/uc?export=download&id=1L8fxlYUGNQ8f2gu0D9CuEqN3NZlZaiDJ
+    resume: "https://drive.google.com/file/d/1L8fxlYUGNQ8f2gu0D9CuEqN3NZlZaiDJ/view?usp=sharing",
+    about: "I am a final-year student of Artificial Intelligence and Data Science at the University of Mumbai. I build machine learning pipelines and data dashboards in Python, from cleaning raw data to evaluating a model and shipping something people can use. My work includes an entity-resolution model for Amazon ML Challenge 2026, a churn model on retail banking data, and ongoing research on how language models behave in code-mixed Indian languages. I graduate in 2027 and am looking for internships in AI, ML, data science, and data analytics.",
     facts: [
       { k: "Degree", v: "B.E. AI & Data Science" },
       { k: "College", v: "Datta Meghe College of Engineering, University of Mumbai" },
       { k: "Graduating", v: "2027" },
-      { k: "Open to", v: "2026–27 internships, 2027 graduate roles" }
+      { k: "Open to", v: "Internships in AI, ML, and data roles; 2027 graduate roles" }
     ],
-    contactLead: "Open to 2026–27 internships and 2027 graduate roles in fintech, data science, and risk.",
-    updated: "Updated September 2026"
+    contactLead: "Open to 2026–27 internships and 2027 graduate roles in AI, ML, data science, and analytics.",
+    updated: "Updated October 2026"
   },
 
-  /* Audience lenses. key = value used in the URL hash (#lens=risk). */
-  defaultLens: "risk",
+  /* Audience lenses. key = value used in the URL hash (#lens=ai). */
+  defaultLens: "ai",
   lenses: {
-    ml: {
-      label: "Data Science & ML",
-      sub: "My focus is the full modeling loop: clean data, careful evaluation, and metrics chosen for the problem rather than for the headline.",
-      order: ["churn", "indicsafe", "finance", "munim"]
+    ai: {
+      label: "AI & ML",
+      sub: "My focus is applied machine learning: building pipelines end to end, choosing metrics that fit the problem, and testing whether language models behave safely beyond English.",
+      order: ["amazon", "indicsafe", "churn", "finance", "munim"]
     },
-    risk: {
-      label: "Fintech & Risk",
-      sub: "My focus is customer risk scoring, classification when the cases that matter are rare, and testing whether language models stay safe outside English.",
-      order: ["churn", "indicsafe", "munim", "finance"]
+    ds: {
+      label: "Data Science",
+      sub: "My focus is the full modeling loop: clean data, feature engineering, careful evaluation, and metrics chosen for the problem rather than for the headline.",
+      order: ["churn", "amazon", "finance", "indicsafe", "munim"]
     },
-    finance: {
-      label: "Finance (IB/PE)",
-      sub: "My focus is turning customer and transaction data into KPIs, trends, and recommendations a decision-maker can act on.",
-      order: ["churn", "finance", "munim", "indicsafe"]
+    da: {
+      label: "Data Analytics",
+      sub: "My focus is turning raw data into clean datasets, KPIs, and dashboards that a decision-maker can read and act on.",
+      order: ["finance", "churn", "munim", "amazon", "indicsafe"]
     }
   },
 
   figures: [
+    { value: "0.93", label: "F0.5, Amazon ML Challenge 2026 leaderboard" },
     { value: "0.78", label: "ROC-AUC, churn model" },
     { value: "19% → 70%", label: "Churner recall after class balancing" },
-    { value: "1,000+", label: "Transaction records processed" },
-    { value: "4", label: "Projects, 3 with live demos" }
+    { value: "1,000+", label: "Transaction records processed" }
   ],
-  figuresNote: "Churn figures measured on 2,000 held-out test customers. Details in Selected work.",
+  figuresNote: "Churn figures measured on 2,000 held-out test customers. The F0.5 score is from the competition leaderboard. Details in Selected work.",
 
   projects: [
+    {
+      id: "amazon",
+      title: "Amazon ML Challenge 2026: Business Entity Resolution",
+      context: "Team NC4, entity resolution, classification",
+      status: null,
+      summary: "A pipeline that matches noisy business records across three independent data sources. I built the pipeline behind the team's final submission.",
+      keyfigs: [
+        { v: "0.93", l: "F0.5 on the leaderboard" },
+        { v: "3,116 / ~10,650", l: "final rank (top 30%)" },
+        { v: "46", l: "engineered features" }
+      ],
+      why: {
+        ai: "End-to-end ML on a real leaderboard: candidate generation, engineered features, a gradient-boosted classifier, and error analysis used to improve it.",
+        ds: "Feature engineering and validation on messy records from three sources, with error analysis driving the next round of improvements.",
+        da: "Reconciling messy records across three sources is the data-quality work that any reliable analysis depends on."
+      },
+      case: {
+        problem: [
+          "Three independent data sources describe the same businesses with inconsistent names and addresses. The task was to decide which records refer to the same real-world business.",
+          "The leaderboard used F0.5, which weights precision more heavily than recall, so false matches cost more than missed matches."
+        ],
+        approach: [
+          "Normalized text and address fields across the three sources.",
+          "Generated candidate pairs with TF-IDF, so the classifier scores plausible matches instead of every possible pair.",
+          "Built string and address similarity features for each candidate pair.",
+          "Engineered 46 pairwise and competition-aware features.",
+          "Trained a LightGBM classifier to separate true matches from non-matches.",
+          "Improved the solution through full-scale validation and error analysis."
+        ],
+        result: [
+          "F0.5 of 0.93 on the leaderboard.",
+          "Final rank 3,116 of about 10,650 teams (top 30%)."
+        ],
+        next: [
+          "Group the remaining errors by record type, such as missing addresses or abbreviations, and fix the largest groups first.",
+          "Tune the match threshold explicitly for F0.5 on a held-out split.",
+          "Test whether embedding-based candidate generation finds matches that TF-IDF misses.",
+          "Document the pipeline and feature set so it can be reused on other matching problems."
+        ],
+        stack: ["Python", "TF-IDF", "String and address similarity", "LightGBM"],
+        links: [
+          { label: "Code on GitHub", href: "https://github.com/ergocoder/amazon-ml-2026-entity-resolution" }
+        ]
+      }
+    },
     {
       id: "churn",
       title: "Customer Churn Prediction & Analytics",
@@ -705,9 +753,9 @@ const SITE = {
         { v: "2,000", l: "test customers" }
       ],
       why: {
-        ml: "Shows the full loop from raw data to an evaluated model, including a deliberate recall-first choice on an imbalanced target instead of reporting accuracy.",
-        risk: "When missing an at-risk customer costs more than a false alarm, recall is the metric to optimize. The same logic applies to fraud and credit-risk screening.",
-        finance: "Turns a customer dataset into a retention view a business can read: KPIs, a geographic breakdown, and recommendations tied to the data."
+        ai: "A complete modeling loop on a real task: cleaning, a baseline model, an imbalance fix, and evaluation on a held-out set, deployed as a dashboard.",
+        ds: "Shows evaluation judgment: a deliberate recall-first choice on an imbalanced target, reported with F1 and ROC-AUC instead of accuracy.",
+        da: "Turns a customer dataset into a view a business can read: KPIs, a geographic breakdown, and retention recommendations tied to the data."
       },
       case: {
         problem: [
@@ -745,15 +793,15 @@ const SITE = {
     },
     {
       id: "indicsafe",
-      title: "IndicSafe: Safety Evaluation Framework for Indian Code-Mixed LLMs",
+      title: "IndicSafe: A Unified Safety Framework for Indian Code-Mixed LLMs",
       context: "NLP, LLM safety",
       status: "Ongoing research",
-      summary: "A labeled dataset and evaluation methodology for testing how large language models handle benign and adversarial prompts written in code-mixed Indian languages such as Hinglish.",
+      summary: "A research-oriented framework for evaluating LLM safety and jailbreak robustness on code-mixed Indian prompts, such as Hinglish, including a labeled dataset of benign and adversarial prompts.",
       keyfigs: [],
       why: {
-        ml: "Evaluation design before results: building a labeled benchmark and a defensible methodology comes first.",
-        risk: "Model risk and AI governance. An institution serving Indian customers in mixed languages needs evidence of how its models behave beyond English-only testing.",
-        finance: "Relevant to AI governance: how a firm would test a language model before putting it in front of customers."
+        ai: "Evaluation design for language models: a labeled benchmark and a methodology for testing safety and jailbreak robustness beyond English.",
+        ds: "Dataset design before results: the labeling scheme and methodology come first, so later numbers can be trusted.",
+        da: "Careful labeling and a defined methodology: the groundwork that makes later measurements reliable."
       },
       case: {
         problem: [
@@ -762,7 +810,7 @@ const SITE = {
         ],
         approach: [
           "Designing a labeled dataset of benign and adversarial code-mixed prompts.",
-          "Building a methodology to evaluate LLM safety and jailbreak robustness."
+          "Developing a framework and methodology to evaluate LLM safety and jailbreak robustness."
         ],
         result: [
           "In progress. No results are reported yet."
@@ -787,9 +835,9 @@ const SITE = {
         { v: "CSV + XLSX", l: "inputs" }
       ],
       why: {
-        ml: "Practical data preparation: inconsistent files cleaned into one reliable structure before any analysis is run.",
-        risk: "The same ingestion and cleaning problem sits underneath spend analytics and transaction monitoring.",
-        finance: "KPI cards, monthly trends, and category filters over 1,000+ transactions: the reporting layer an analyst builds for a decision-maker."
+        ai: "The data-preparation layer under any model: inconsistent files cleaned into one reliable structure before analysis.",
+        ds: "Exploratory analysis on 1,000+ real transaction records: spending patterns, monthly trends, and automated insights.",
+        da: "KPI cards, monthly trends, and category filters over 1,000+ transactions: the reporting layer an analyst builds for a decision-maker."
       },
       case: {
         problem: [
@@ -825,9 +873,9 @@ const SITE = {
       summary: "A hackathon fintech platform to help users understand their spending. I led domain research, feature planning, and documentation.",
       keyfigs: [],
       why: {
-        ml: "Product framing for data features: deciding which spending insights and visualizations are worth building.",
-        risk: "Consumer fintech: research and feature planning around how people understand their own spending.",
-        finance: "Domain research, scoping, and documentation under a hackathon deadline, with the output written for a non-technical user."
+        ai: "Product framing for data features: deciding which spending insights are worth building.",
+        ds: "Domain research and feature planning that decide what the data should show before any build starts.",
+        da: "Domain research, scoping, and documentation under a hackathon deadline, written for a non-technical user."
       },
       case: {
         problem: [
@@ -871,9 +919,9 @@ const SITE = {
     context: "Independent QA testing",
     summary: "Conducted a structured manual QA review covering navigation, routing, form validation, UI behavior, edge cases, and console errors. Identified and documented 13 issues with severity classification, expected vs. actual behavior, and supporting evidence.",
     why: {
-      ml: "Testing starts from a stated expectation and records where behavior deviates. It is the same discipline as model evaluation.",
-      risk: "Probing invalid input and edge cases is the same habit as stress-testing a model before anyone relies on it.",
-      finance: "Findings are ranked by severity and written as expected versus actual, so a non-technical reader can decide what to fix first."
+      ai: "Testing starts from a stated expectation and records where behavior deviates. It is the same discipline as evaluating a model or an LLM.",
+      ds: "Writing down expected versus actual behavior, then testing edge cases, is the same discipline as model validation.",
+      da: "Findings are ranked by severity and written as expected versus actual, so a non-technical reader can decide what to fix first."
     },
     points: [
       "Identified high-severity routing and broken-link issues",
@@ -898,23 +946,27 @@ const SITE = {
     { title: "Maintainer & Contributor", org: "Hacktoberfest 2025", text: "Reviewed contributions and supported open-source collaboration." }
   ],
 
-  /* fin: true marks finance-relevant skills (highlighted in Fintech and Finance lenses) */
+  /* hl: lens keys (ai, ds, da) for which the skill is marked in the Skills section */
   skills: [
-    { group: "Languages", items: [{ n: "Python" }, { n: "SQL", fin: true }, { n: "JavaScript" }, { n: "HTML" }, { n: "CSS" }] },
+    { group: "Languages", items: [{ n: "Python", hl: ["ai", "ds"] }, { n: "SQL", hl: ["ds", "da"] }, { n: "JavaScript" }, { n: "HTML" }, { n: "CSS" }] },
     { group: "Data & ML", items: [
-      { n: "Exploratory data analysis", fin: true }, { n: "Data cleaning & preprocessing" }, { n: "Feature engineering" },
-      { n: "Classification", fin: true }, { n: "Predictive modeling" }, { n: "Model evaluation", fin: true },
-      { n: "Statistical analysis" }, { n: "Handling class imbalance" }
+      { n: "Exploratory data analysis", hl: ["ds", "da"] }, { n: "Data cleaning & preprocessing", hl: ["da"] }, { n: "Feature engineering", hl: ["ai", "ds"] },
+      { n: "Classification", hl: ["ai", "ds"] }, { n: "Predictive modeling" }, { n: "Model evaluation", hl: ["ai", "ds"] },
+      { n: "Entity resolution", hl: ["ai"] }, { n: "Statistical analysis", hl: ["ds"] }, { n: "Handling class imbalance" }, { n: "Data visualization", hl: ["da"] }
     ] },
-    { group: "Libraries", items: [{ n: "Pandas" }, { n: "NumPy" }, { n: "Scikit-learn" }, { n: "Matplotlib" }, { n: "Plotly" }, { n: "TensorFlow" }, { n: "Keras" }] },
-    { group: "Tools", items: [{ n: "Streamlit dashboards", fin: true }, { n: "Excel", fin: true }, { n: "Git" }, { n: "GitHub" }, { n: "Notion" }, { n: "React" }] }
+    { group: "Libraries", items: [
+      { n: "Pandas", hl: ["ds", "da"] }, { n: "NumPy" }, { n: "Scikit-learn", hl: ["ai", "ds"] }, { n: "LightGBM", hl: ["ai"] }, { n: "RapidFuzz" },
+      { n: "Matplotlib", hl: ["da"] }, { n: "Plotly", hl: ["da"] }, { n: "TensorFlow", hl: ["ai"] }, { n: "Keras", hl: ["ai"] }
+    ] },
+    { group: "Tools", items: [{ n: "Streamlit dashboards", hl: ["da"] }, { n: "Excel", hl: ["da"] }, { n: "Git" }, { n: "GitHub" }, { n: "Notion" }, { n: "React" }] }
   ],
 
+  /* href: public credential link (from your résumé). Leave "" to hide the link. */
   certs: [
-    { title: "2nd Position, AI Spark Intra-Departmental Project Competition (TeachMate project)", issuer: "Dept. of AI & Data Science, DMCE" },
-    { title: "Discrete Mathematics", issuer: "NPTEL" },
-    { title: "Cloud Foundations badge", issuer: "AWS Academy" },
-    { title: "Android Developer Virtual Internship", issuer: "EduSkills × Google for Developers" }
+    { title: "2nd Position, AI Spark Intra-Departmental Project Competition (TeachMate project)", issuer: "Dept. of AI & Data Science, DMCE", href: "https://drive.google.com/file/d/1sdfGqvAOthcWy1WGPVQngSQJQmsCPoZI/view?usp=sharing" },
+    { title: "Discrete Mathematics", issuer: "NPTEL", href: "https://drive.google.com/file/d/13xaMni-D0G14Dv1Toflp-9z952rQNWti/view" },
+    { title: "Cloud Foundations badge", issuer: "AWS Academy", href: "https://drive.google.com/file/d/1QujudFONGynpBsGNbtAOPWT1sKZ2u841/view?usp=sharing" },
+    { title: "Android Developer Virtual Internship", issuer: "EduSkills × Google for Developers", href: "https://drive.google.com/file/d/1Clmnukj0SGkv68lepFQK9lYQAFfqS0WO/view" }
   ]
 };
 
@@ -1011,12 +1063,12 @@ const SITE = {
       <div class="skill-group">
         <h3 id="sg-${i}">${esc(g.group)}</h3>
         <ul class="chips" aria-labelledby="sg-${i}">
-          ${g.items.map(s => `<li class="chip"${s.fin ? ' data-fin="true"' : ""}>${esc(s.n)}</li>`).join("")}
+          ${g.items.map(s => `<li class="chip"${s.hl ? ` data-hl="${s.hl.join(" ")}"` : ""}>${esc(s.n)}</li>`).join("")}
         </ul>
       </div>`).join("");
 
     $("#certs").innerHTML = SITE.certs.map(c =>
-      `<li><span>${esc(c.title)}</span><span class="issuer">${esc(c.issuer)}</span></li>`).join("");
+      `<li><span>${esc(c.title)}${c.href ? extLink(c.href, "View credential") : ""}</span><span class="issuer">${esc(c.issuer)}</span></li>`).join("");
 
     $("#contact-lead").innerHTML = esc(p.contactLead);
     $("#contact-list").innerHTML = `
