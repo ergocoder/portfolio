@@ -549,7 +549,7 @@ section:focus, main:focus { outline: none; }
       <dl class="figures" id="figures" aria-label="Key figures"></dl>
       <p class="figures-note" id="figures-note"></p>
 
-      <noscript><p>Project details on this page need JavaScript. The full résumé is available at <a href="https://drive.google.com/file/d/1L8fxlYUGNQ8f2gu0D9CuEqN3NZlZaiDJ/view?usp=sharing">Google Drive</a>.</p></noscript>
+      <noscript><p>Project details on this page need JavaScript. The full résumé is available at <a href="https://drive.google.com/file/d/1jUQ-UHN9vJGAhidfyzqcQ6mPf2oawGpn/view?usp=drive_link">Google Drive</a>.</p></noscript>
     </div>
   </section>
 
@@ -653,8 +653,8 @@ const SITE = {
     linkedin: "https://www.linkedin.com/in/ergocoder",
     github: "https://github.com/ergocoder",
     // Drive "view" link opens a preview with a download button.
-    // For a direct download instead, use: https://drive.google.com/uc?export=download&id=1L8fxlYUGNQ8f2gu0D9CuEqN3NZlZaiDJ
-    resume: "https://drive.google.com/file/d/1L8fxlYUGNQ8f2gu0D9CuEqN3NZlZaiDJ/view?usp=sharing",
+    // For a direct download instead, use: https://drive.google.com/uc?export=download&id=1jUQ-UHN9vJGAhidfyzqcQ6mPf2oawGpn
+    resume: "https://drive.google.com/file/d/1jUQ-UHN9vJGAhidfyzqcQ6mPf2oawGpn/view?usp=drive_link",
     about: "I am a final-year student of Artificial Intelligence and Data Science at the University of Mumbai. I build machine learning pipelines and data dashboards in Python, from cleaning raw data to evaluating a model and shipping something people can use. My work includes an entity-resolution model for Amazon ML Challenge 2026, a churn model on retail banking data, and ongoing research on how language models behave in code-mixed Indian languages. I graduate in 2027 and am looking for internships in AI, ML, data science, and data analytics.",
     facts: [
       { k: "Degree", v: "B.E. AI & Data Science" },
@@ -753,29 +753,30 @@ const SITE = {
         { v: "2,000", l: "test customers" }
       ],
       why: {
-        ai: "A complete modeling loop on a real task: cleaning, a baseline model, an imbalance fix, and evaluation on a held-out set, deployed as a dashboard.",
-        ds: "Shows evaluation judgment: a deliberate recall-first choice on an imbalanced target, reported with F1 and ROC-AUC instead of accuracy.",
+        ai: "A complete modeling loop on a real task: cleaning, a baseline model, an imbalance fix, and evaluation on a held-out test set, deployed as a dashboard.",
+        ds: "Shows evaluation judgment on an imbalanced target: a deliberate choice to prioritize catching churners over overall accuracy, with results reported as recall, F1, and ROC-AUC.",
         da: "Turns a customer dataset into a view a business can read: KPIs, a geographic breakdown, and retention recommendations tied to the data."
       },
       case: {
         problem: [
           "About 20% of customers in the dataset churned. On a target that imbalanced, a model can look accurate while missing most of the customers who actually leave.",
-          "The goal was to flag at-risk customers so a retention team could act before they go. Dataset source: [PLACEHOLDER: dataset name and source, e.g. public Kaggle dataset]."
+          "The goal was to flag at-risk customers so a retention team could act before they go. Dataset source: the public Churn Modelling dataset on Kaggle."
         ],
         approach: [
           "Cleaned and preprocessed the retail banking customer dataset.",
           "Ran exploratory analysis to identify trends, patterns, and the main drivers of churn.",
+          "Split the data 80/20 with a stratified split (8,000 training and 2,000 test customers) and fitted the scaler on the training set only.",
           "Trained a Logistic Regression model, whose coefficients can be inspected directly.",
-          "Applied class balancing to address the 20% churn imbalance. Balancing usually raises recall at some cost to precision, so the model was judged on recall and F1 rather than accuracy.",
-          "Evaluated on 2,000 held-out test customers."
+          "Applied class balancing (class weights in the Logistic Regression) to address the 20% churn imbalance. Identifying churners mattered more than overall accuracy, and balancing raises recall at a cost to precision and accuracy, so the results below report both sides.",
+          "Evaluated on 2,000 held-out test customers, split off before any scaling or training."
         ],
         resultTable: {
           caption: "Churner class, 2,000 test customers",
           head: ["Metric", "Before balancing", "After balancing"],
-          rows: [["Recall", "19%", "70%"], ["F1", "0.28", "0.50"]]
+          rows: [["Recall", "19%", "70%"], ["F1", "0.28", "0.50"], ["Precision", "59%", "39%", "down"], ["Overall accuracy", "81%", "71%", "down"]]
         },
         result: [
-          "ROC-AUC of 0.78.",
+          "ROC-AUC of 0.78. Balancing traded precision and overall accuracy for recall: the model catches 70% of churners but also flags more customers who would have stayed.",
           "Deployed an interactive Streamlit dashboard with KPI tracking, geographic churn analysis, and data-driven retention recommendations."
         ],
         next: [
@@ -892,10 +893,9 @@ const SITE = {
           "Test the insight features with a small group of users and record which ones change what they do.",
           "Define a small set of success metrics before adding features."
         ],
-        stack: ["[PLACEHOLDER: tech stack used]"],
+        stack: [],
         links: [
           { label: "Live demo", href: "https://muni-m.web.app/" }
-          // [PLACEHOLDER] Optional: add { label: "Code on GitHub", href: "..." }
         ]
       }
     }
@@ -1125,7 +1125,7 @@ const SITE = {
       <div class="table-scroll"><table class="mtable">
         <caption>${esc(c.resultTable.caption)}</caption>
         <thead><tr>${c.resultTable.head.map(h => `<th scope="col">${esc(h)}</th>`).join("")}</tr></thead>
-        <tbody>${c.resultTable.rows.map(r => `<tr><th scope="row">${esc(r[0])}</th><td>${esc(r[1])}</td><td class="up">${esc(r[2])}</td></tr>`).join("")}</tbody>
+        <tbody>${c.resultTable.rows.map(r => `<tr><th scope="row">${esc(r[0])}</th><td>${esc(r[1])}</td><td${r[3] === "down" ? "" : ' class="up"'}>${esc(r[2])}</td></tr>`).join("")}</tbody>
       </table></div>` : "";
     const links = c.links.length
       ? `<div class="links-row">${c.links.map(l => extLink(l.href, l.label)).join("")}</div>`
@@ -1136,7 +1136,7 @@ const SITE = {
         <div class="case-row"><h4>Approach</h4><div>${list(c.approach)}</div></div>
         <div class="case-row"><h4>Result</h4><div>${table}${list(c.result)}</div></div>
         <div class="case-row"><h4>What I'd do next</h4><div><span class="future-tag">Future work, not yet done</span>${list(c.next)}</div></div>
-        <div class="case-row"><h4>Stack</h4><div><ul class="stack">${c.stack.map(s => `<li>${esc(s)}</li>`).join("")}</ul></div></div>
+        ${c.stack.length ? `<div class="case-row"><h4>Stack</h4><div><ul class="stack">${c.stack.map(s => `<li>${esc(s)}</li>`).join("")}</ul></div></div>` : ""}
         <div class="case-row"><h4>Links</h4><div>${links}</div></div>
       </div>`;
   }
